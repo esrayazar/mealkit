@@ -70,11 +70,32 @@ public class MealController {
 	}
 	
 	@GetMapping("/search")
-	public String search(@RequestParam("term") String term, 
-			@RequestParam("by") String by, Model model) {
-		System.out.println(">>>");
-		return "/meal/mealsearch.jsp";
+	public String search(@RequestParam("term") String term, @RequestParam("by") String by, Model model) {
 		
+		if (by.equals("name")) {
+			Meals meal = mealService.getMealbyName(term);
+			if(meal.getMeals()==null)
+			{
+				model.addAttribute("noresult",true);
+			}else {
+				model.addAttribute("apiMeals", meal);
+				model.addAttribute("display","byname");
+			}
+		} else {
+			CountryMeals cmeal = mealService.getMealbyIngredient(term);
+			if(cmeal.getMeals()==null)
+			{
+				model.addAttribute("noresult",true);
+			} else {
+				model.addAttribute("apiMeals", cmeal);
+				model.addAttribute("display","byingredients");
+			}
+			
+		}
+		
+		
+		return "/meal/mealsearch.jsp";
+
 	}
 	
 
