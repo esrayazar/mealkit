@@ -1,12 +1,15 @@
 package com.coding.meal_kit.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
@@ -35,6 +38,25 @@ public class User {
 	@Transient
 	private String confirm_password;
 	
+	@OneToMany(mappedBy = "ratedBy", fetch = FetchType.LAZY)
+	private List<Rating> ratings;
+	
+	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Review> reviews;
+	
+
+	public List<Rating> getRatings() {
+		return ratings;
+	}
+	public void setRatings(List<Rating> ratings) {
+		this.ratings = ratings;
+	}
+	public List<Review> getReviews() {
+		return reviews;
+	}
+	public void setReviews(List<Review> reviews) {
+		this.reviews = reviews;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -90,6 +112,5 @@ public class User {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
-
 
 }
