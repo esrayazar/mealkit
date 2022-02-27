@@ -11,7 +11,6 @@
 <title>Profile</title>
 </head>
 <a href="/">Home</a> | <a href="/profile/${pUser.id}/edit">Edit</a>  
-<%-- <a href="/delete/${pUser.id}">Delete</a> --%>
 
 <form action="/delete/${pUser.id}" method="post">
     <input type="hidden" name="_method" value="delete">
