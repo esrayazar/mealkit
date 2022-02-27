@@ -1,13 +1,19 @@
 package com.coding.meal_kit.models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,15 +31,21 @@ public class Meal {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "likes", joinColumns = @JoinColumn(name = "meal_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+	private List<User> likers;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "favorites", joinColumns = @JoinColumn(name = "meal_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+	private List<User> favorites;
 	
 	private Long idMeal;
 	
 	private String strMeal;
-	
 	private String strDrinkAlternate;
-	
 	private String strCategory;
 	private String strArea;
+	@Lob
+	@Column(name="str_instructions", length=4000)
 	private String strInstructions;
 	private String strMealThumb;
 	private String strTags;
