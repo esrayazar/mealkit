@@ -13,7 +13,7 @@
 <title>Home</title>
 </head>
 <body>
-	<a href="">Contact us</a> | <a href="/register">Sign up</a> | <a href="/login">Sign in</a> 
+	<a href="">Contact us</a> | <a href="/register">Sign up</a> | <a href="/login">Sign in</a> | <a href="/logout">Logout</a>
 	<div>
 	<form action="/search" method="get">
 	<input name="term">
@@ -46,26 +46,11 @@
 			Feeling hungry?
 		</h3>
 
-		<a href="/details/${getOne.id}"><button id="meal">Get a random meal</button></a>
+		<a href="/details/"><button id="meal">Get a random meal</button></a>
 
 	</div>
-	<c:forEach items="${apiData.meals}" var="meal">
-	<div class="row">
-	${meal.strMeal}
-	${meal.strDrinkAlternate}
-	${meal.strCategory}
-	${meal.strArea}
-	${meal.strInstructions}
-	${meal.strMealThumb}
-	${meal.strTags}
-	<a href="${meal.strYoutube}" target="_blank">Watch on YouTube</a>
-	<iframe width="420" height="315"
-src="https://www.youtube.com/embed/${meal.strYoutubeVideoID}">
-</iframe>
+
 	
-
-	</div>
-	</c:forEach>
 
 </div>
 	
