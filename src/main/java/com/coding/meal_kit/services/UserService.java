@@ -13,6 +13,14 @@ public class UserService {
 	@Autowired 
 	private UserRepository uRepo;
 	
+	public User updateU(User user) {
+		return uRepo.save(user);
+	}
+	
+	public void deleteU(Long id) {
+		 uRepo.deleteById(id);;
+	}
+	
 	public User registerUser(User user) {
 		String hash = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
 		user.setPassword(hash);
