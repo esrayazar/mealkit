@@ -47,13 +47,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/login")
-	public String login(Model model) {
+	public String login(@ModelAttribute("registration") User user, Model model) {
 		model.addAttribute("login", login_error);
 		return "/user/login.jsp";
 	}
 	
 	@PostMapping("/login")
-	public String loginUser(@RequestParam("email") String email, @RequestParam("password") String password, HttpSession session, RedirectAttributes redirectAttr) {
+	public String loginUser(@Valid @ModelAttribute("registration") User newUser, BindingResult results, @RequestParam("email") String email, @RequestParam("password") String password, HttpSession session, RedirectAttributes redirectAttr) {
 		if(uService.authenticateUser(email, password)) {
 			User user = uService.findByEmail(email);
 			session.setAttribute("userId", user.getId());

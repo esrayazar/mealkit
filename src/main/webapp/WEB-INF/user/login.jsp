@@ -28,29 +28,52 @@
 						</p>
 						<button class="btn">Submit</button>
 					</form>
-					<c:choose>
-						<c:when test="${!login}">
-							<button class="btn" onclick="openLogin()">I am new here</button>
-						</c:when>
-						<c:otherwise>
-							<a class="btn" href="/register">I am new here</a>
-						</c:otherwise>
-					</c:choose>
+					<button class="btn" onclick="backToRegister()">flip it to register</button>
+					
+				</div>
 
+
+
+				<div class="card-back">
+						
+						<form:form action="/register" method="post"
+						modelAttribute="registration">
+						<p>
+							<form:label path="firstName">Name:</form:label>
+							<form:errors path="firstName" class="text-danger" />
+							<form:input path="firstName" />
+						</p>
+						<p>
+							<form:label path="email">Email:</form:label>
+							<form:errors path="email" class="text-danger" />
+							<form:input path="email" />
+						</p>
+						<p>
+							<form:label path="password">Password</form:label>
+							<form:errors path="password" class="text-danger" />
+							<form:input path="password" type="password" />
+						</p>
+						<p>
+							<form:label path="confirm_password">Confirm Password</form:label>
+							<form:errors path="confirm_password" class="text-danger" />
+							<form:input path="confirm_password" type="password" />
+						</p>
+						<input class="btn" type="submit" value="Submit" />
+					</form:form>
+						<input class="btn" type="submit" value="I have an account"
+						onclick="openRegister()" />
+				</div>
+					
+					
 				</div>
 			</div>
 		</div>
-	</div>
-	
-	<script>
-		var card = document.getElementById("card");
-			function openRegister(){
-				card.style.transform = "rotateY(-180deg)";
-		}
-			function openLogin(){
-				card.style.transform = "rotateY(0deg)";
-		}
-	</script>
 
+	
+	
+	<script src="/js/flip.js"></script>
+	
+	
+	
 </body>
 </html>
