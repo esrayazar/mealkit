@@ -13,7 +13,7 @@
 <title>Home</title>
 </head>
 <body>
-	<a href="">Contact us</a> | <a href="/register">Sign up</a> | <a href="/login">Sign in</a> | <a href="/logout">Logout</a>
+	<a href="">CONTACT US HERE</a> | <a href="/register">Sign up</a> | <a href="/login">Sign in</a> | <a href="/logout">Logout</a>
 	<div>
 	<form action="/search" method="get">
 	<input name="term">
