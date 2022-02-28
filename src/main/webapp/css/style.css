@@ -8,7 +8,9 @@
 
 body{
 	font-family: sans-serif;
+	background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%);
 }
+
 
 
 .logo{
@@ -16,14 +18,35 @@ body{
 	
 }
 
+form {
+	font-size: 15px;
+	
+	margin-top: 20px;
+}
+
+p {
+	margin-top: 15px;
+	
+}
+
+.btn-signin {
+	
+	margin-top:20px;
+	margin-left:122px;
+	background-color: #67B26F;
+	color: whitesmoke;
+	border-radius: 50px;
+	
+}
+
+
 header{
 	height: 20px;
-	display: flex;
+	
 	justify-content: space-between;
 	align-items: center;
 	padding: 30px 10%;
-	background-color: orange;
-	background-image: linear-gradient(rgba(98, 10, 117),  rgba(0,0,255,0));
+	background-image: linear-gradient(to right, #67B26F 0%, #4ca2cd  51%, #67B26F  100%);
 }
 .nav_links{
 	list-style: none;
@@ -51,17 +74,18 @@ header{
 	width: 100%;
 	max-width: 150rem;
 	font-family:Helvetica;
-	background: rgb(175, 134, 225);
-	color: #fff;
+	background-image: linear-gradient(to right, #67B26F 0%, #4ca2cd  51%, #67B26F  100%);
+	color: #134E5E;
 	display:flex;
 	align-items: center;
 	justify-content: center;
+	font-weight: bold;
 }
 
 .card{
 	width:400px;
 	height:700px;
-	box-shadow: 0 0 40px 20px rgba(108 57 113);
+	box-shadow: 0 0 40px 20px grey;
 	perspective: 1000px;
 }
 
@@ -73,13 +97,14 @@ header{
 	transform-style: preserve-3d; 
 }
 
+
 .card-front, .card-back{
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	background-position: center;
 	background-size: cover;
-	background-image: linear-gradient(rgba(98, 10, 117), rgba(0,0,255,0)), url(/image/hotel.png);
+	background-image: linear-gradient(to right, #67B26F 0%, #4ca2cd  51%, #67B26F  100%);
 	padding: 55px;
 	box-sizing: border-box;
 	backface-visibility: hidden;
@@ -99,7 +124,7 @@ header{
 
 .input-box{
 	width: 100%;
-	background: rgb(79, 50, 86);
+	background: #134E5E;
 	border: 1px solid #180503;
 	margin: 6px 0;
 	height: 32 px;
@@ -113,7 +138,7 @@ header{
 
 .btn{
 	width: 100%;
-	background: rgb(79, 50, 86);
+	background:#4ca2cd ;
 	border: 1px solid #180503;
 	margin: 35px 0 10px;
 	height: 32px;
@@ -122,8 +147,9 @@ header{
 	padding: 0 10px;
 	box-sizing: border-box;
 	outline: none;
-	color: #fff;
+	color: whitesmoke;
 	cursor: pointer;
+	font-weight: bold;
 }
 
 ::placeholder{
@@ -154,4 +180,13 @@ header{
 	font-size: 15px;
 	color: blue;
 	text-align: center;
+	
 }
+
+h3 {
+	font-size: 20px;
+	padding-left: 22px;
+	margin-top:10px;
+	color: #134E5E;
+}
+

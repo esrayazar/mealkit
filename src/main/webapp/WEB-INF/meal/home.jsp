@@ -57,7 +57,7 @@
 <footer class="footer">
         <div class="footer__addr">
               
-          <h4>Contact Us</h4>
+   
           <address>
             5534 Somewhere In. The World 22193-10212<br>
                 

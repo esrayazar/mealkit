@@ -13,7 +13,6 @@
 
 </head>
 <body>
-
 	<div class="container">
 		<div class="card">
 			<div class="box" id="card">
@@ -32,21 +31,27 @@
 							<form:input path="email" />
 						</p>
 						<p>
-							<form:label path="password">Password</form:label>
+							<form:label path="password">Password:</form:label>
 							<form:errors path="password" class="text-danger" />
 							<form:input path="password" type="password" />
 						</p>
 						<p>
-							<form:label path="confirm_password">Confirm Password</form:label>
+							<form:label path="confirm_password">Confirm Password:</form:label>
 							<form:errors path="confirm_password" class="text-danger" />
 							<form:input path="confirm_password" type="password" />
 						</p>
 						<input class="btn" type="submit" value="Submit" />
+						
 					</form:form>
 
-					<input class="btn" type="submit" value="I have an account"
+					<input class="btn" type="submit" value="I have an account!"
 						onclick="openRegister()" />
+							<h3>Sign in with social media</h3>
+	<a href="">Facebook</a>
+	<a href="">Instagram</a>
+	<a href="">Twitter</a>
 				</div>
+				
 				<div class="card-back">
 
 					<h2>Log In</h2>
@@ -60,7 +65,7 @@
 						<p>
 							<label>Password:</label> <input name="password" />
 						</p>
-						<button>Sign in</button>
+						<button class="btn-signin" type="button">Sign in</button>
 					</form>
 					<button class="btn" onclick="openLogin()">I am new here</button>
 
@@ -72,10 +77,6 @@
 	<script src="/js/flip.js"></script>
 
 
-	<h3>Sign in with social media</h3>
-	<a href="">Facebook</a>
-	<a href="">Instagram</a>
-	<a href="">Twitter</a>
 
 </body>
 </html>
