@@ -23,8 +23,8 @@
 </head>
 <body>
 	<a href="">Contact us</a> |
-	<a href="">Sign up</a> |
-	<a href="">Sign in</a>
+	<a href="/register">Sign up</a> |
+	<a href="/login">Sign in</a>
 	<hr>
 	<div class="container">
 		<div class="row">

@@ -10,6 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="/css/edit.css" rel="stylesheet" type="text/css">
 <title>Edit</title>
 </head>
 <body>

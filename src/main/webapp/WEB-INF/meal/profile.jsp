@@ -8,6 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="/css/profile.css" rel="stylesheet" type="text/css">
 <title>Profile</title>
 </head>
 <a href="/">Home</a> | <a href="/profile/${pUser.id}/edit">Edit</a>  
