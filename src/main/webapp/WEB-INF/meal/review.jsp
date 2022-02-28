@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="/css/review.css" rel="stylesheet" type="text/css">
 <title>Review</title>
 </head>
 <body>
