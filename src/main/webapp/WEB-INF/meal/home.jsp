@@ -46,7 +46,10 @@
 			Feeling hungry?
 		</h3>
 
+
+	
 		<a href="/details/"><button class="randommeal" id="meal">Get a random meal</button></a>
+
 
 	</div>
 

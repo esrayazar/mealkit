@@ -15,8 +15,3 @@ console.log('hello')
 		}
 
 
-
-//- remove href
-//- create a new js function
-//-- flip
-//-- redirect to /register
