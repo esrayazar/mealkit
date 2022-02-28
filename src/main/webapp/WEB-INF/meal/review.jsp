@@ -12,6 +12,21 @@
 <title>Review</title>
 </head>
 <body>
+
+<script>
+	$(function (){
+		$("#rating").rateYo({
+			rating: 0,
+			numStars: 5,
+			maxValue: 5,
+			halfStar: true,
+			onChange: function (rating, rateYoInstance){
+				$('rating').val(rating);
+			}
+		
+		});
+	});
+</script>
 <h1>Review</h1>
 	<form:form action="/createReviews" method="post" modelAttribute="PostAReview">
 		<form:label path="review"></form:label>
