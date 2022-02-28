@@ -29,7 +29,10 @@
 						<button class="btn">Submit</button>
 					</form>
 					<button class="btn" onclick="backToRegister()">flip it to register</button>
-					
+					<h3>Sign in with social media</h3>
+	<a href="">Facebook</a>
+	<a href="">Instagram</a>
+	<a href="">Twitter</a>
 				</div>
 
 
@@ -62,6 +65,10 @@
 					</form:form>
 						<input class="btn" type="submit" value="I have an account"
 						onclick="openRegister()" />
+						<h3>Sign in with social media</h3>
+	<a href="">Facebook</a>
+	<a href="">Instagram</a>
+	<a href="">Twitter</a>
 				</div>
 					
 					
