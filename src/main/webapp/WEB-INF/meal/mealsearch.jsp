@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="/css/mealsearch.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>Search by Meal Type</title>
 </head>
 <body>
 <c:choose>
@@ -18,14 +18,14 @@
 <c:when test="${display eq 'byname'}">
 <c:forEach items="${apiMeals.meals}" var="meal">
 	<div class="row">
-	${meal.strMeal}
+	<h2>Directions for ${meal.strMeal}:</h2> 
+	
 	${meal.strDrinkAlternate}
 	${meal.strCategory}
 	${meal.strArea}
 	${meal.strInstructions}
-	${meal.strMealThumb}
-	${meal.strTags}
-	<a href="${meal.strYoutube}" target="_blank">Watch on YouTube</a>
+
+	<a class="youtube" href="${meal.strYoutube}" target="_blank">Watch on YouTube</a>
 	<iframe width="420" height="315"
 src="https://www.youtube.com/embed/${meal.strYoutubeVideoID}">
 </iframe>
@@ -38,7 +38,7 @@ src="https://www.youtube.com/embed/${meal.strYoutubeVideoID}">
 <c:forEach items="${apiMeals.meals}" var="meal">
 <h1>${meal.strMeal}</h1>
 		<img src="${meal.strMealThumb}">
-		<a href="/getMeal/${meal.idMeal}">See Meal</a>
+		<a class="seeMeal" href="/getMeal/${meal.idMeal}">See Meal</a>
 </c:forEach>
 </c:otherwise>
 </c:choose>

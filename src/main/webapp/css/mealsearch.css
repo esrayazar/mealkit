@@ -1,0 +1,35 @@
+.row {
+	margin-left: 250px;
+	margin-right:250px;
+	height: auto;
+	width: auto;
+	line-height: 25px;
+	
+}
+
+body {
+	background-image: linear-gradient(to right, #67B26F 0%, #4ca2cd  51%, #67B26F  100%);
+	display: flexbox;
+}
+
+iframe {
+	display: flex;
+	margin-left:150px;
+	margin-top: 25px;
+	margin-bottom:20px;
+	border: 2px black;
+}
+
+.youtube {
+	margin-top: 20px;
+	display:flex;
+	margin-left:285px;
+}
+
+h2 {
+	display: flex;
+	margin-left: 184px;
+	text-decoration: underline;
+	font-style: italic;
+	
+}
