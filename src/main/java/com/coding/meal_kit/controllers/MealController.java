@@ -22,6 +22,7 @@ import com.coding.meal_kit.models.Meal;
 import com.coding.meal_kit.models.Meals;
 import com.coding.meal_kit.models.User;
 import com.coding.meal_kit.services.MealService;
+import com.coding.meal_kit.services.ReviewService;
 import com.coding.meal_kit.services.UserService;
 
 @Controller
@@ -32,6 +33,9 @@ public class MealController {
 
 	@Autowired
 	private UserService uService;
+	
+	@Autowired
+	private ReviewService rService;
 
 	private Areas areas;
 
@@ -119,6 +123,7 @@ public class MealController {
 		if (session.getAttribute("userId") == null)
 			return "redirect:login/";
 		model.addAttribute("pUser", uService.findById(id));
+//		model.addAttribute("showR", rService.getOneR(id) );
 		return "/meal/profile.jsp";
 
 	}
@@ -131,24 +136,25 @@ public class MealController {
 
 		model.addAttribute("EditOne", uService.findById(id));
 
-//		model.addAttribute("GetUser", uService.findById(id));
-
 		return "/meal/edit.jsp";
+		
 	}
 
 	@PutMapping("/update/{id}")
 	public String update(@Valid @ModelAttribute("Edit") User user, BindingResult results, @PathVariable("id") Long id,
 			Model model, HttpSession session) {
-		if (session.getAttribute("userId") == null)
-			return "redirect:login/";
+//		if (session.getAttribute("userId") == null)
+//			return "redirect:login/";
 		if (results.hasErrors()) {
 			model.addAttribute("EditOne", uService.findById(id));
 			return "/meal/edit.jsp";
+//			return "redirect:/profile/{id}/edit";
+//			
 		} else {
+			System.out.println("hello");
 			model.addAttribute("update", uService.updateU(user));
-//			model.addAttribute("One", hService.getOne(id));
 
-			return "redirect:/profile/{id}";
+			return "redirect:/details";
 		}
 	}
 

@@ -63,7 +63,7 @@
 							<label>Email:</label> <input name="email" />
 						</p>
 						<p>
-							<label>Password:</label> <input name="password" />
+							<label>Password:</label> <input name="password" type="password" />
 						</p>
 						<button class="btn-signin" type="button">Sign in</button>
 					</form>

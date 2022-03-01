@@ -26,8 +26,15 @@ public class ReviewService {
 		return rRepo.save(r);
 	}
 	
-	public void AddReview(Review review) {
-		rRepo.save(review);
+//	public void AddReview(Review review) {
+//		rRepo.save(review);
+//	}
+	public void deleteReview(Long id) {
+		rRepo.deleteById(id);
+	}
+	
+	public Review updateR(Review r) {
+		return rRepo.save(r);
 	}
 
 }

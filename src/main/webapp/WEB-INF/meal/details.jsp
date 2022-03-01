@@ -154,6 +154,9 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
+		<div class="row">
+			<a href="/addReview/${meal.idMeal}">Add review <i  class="fa-solid fa-comments fa-2x"></i></a>
+		</div>
 
 	</div>
 	
