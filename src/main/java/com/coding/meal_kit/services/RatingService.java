@@ -15,4 +15,6 @@ public class RatingService {
 	public void AddRating(Rating rating) {
 		ratingRepo.save(rating);
 	}
+	
+	
 }

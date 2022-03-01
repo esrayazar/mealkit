@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -36,9 +37,13 @@ public class User {
 	@JoinTable(name = "favorites", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "meal_id"))
 	private List<Meal> favoritedMeals;
 	
+	@OneToMany(mappedBy = "reviewedBy", fetch = FetchType.LAZY)
+    private List<Review> reviews;
+	
 	@NotBlank(message="Name is required")
 	private String firstName;
 	
+	@NotBlank
 	@Email
 	private String email;
 	
@@ -52,9 +57,9 @@ public class User {
 	@OneToMany(mappedBy = "ratedBy", fetch = FetchType.LAZY)
 	private List<Rating> ratings;
 	
-	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
-    private List<Review> reviews;
-	
+//	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+//    private List<Review> reviews;
+//	
 
 	public List<Rating> getRatings() {
 		return ratings;
