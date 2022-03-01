@@ -5,12 +5,15 @@ h3{
 	padding-left: 452px;
 	font-size: 50px;
 	font-style: italic;
+	display: flex;
+	margin-top:168px;
 }
 
 .randommeal { background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%)}
 .randommeal {
+			margin-top: 25px;
             margin-left: 490px;
-            padding: 15px 45px;
+            padding: 15px 40px;
             text-align: center;
             text-transform: uppercase;
             transition: 0.5s;
