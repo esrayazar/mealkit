@@ -49,20 +49,13 @@ public class ReviewController {
 	public String createReview(@Valid @ModelAttribute("PostAReview") Review review, BindingResult results,
 			Model model, HttpSession session) {
 		if (results.hasErrors()) {
-//			Meal meal = mService.getMealbyID(null);
-//			model.addAttribute("mealId", mService.getMealbyID(id));
-//			model.addAttribute("createR", rService.getAll());
-//			System.out.println(">>>>"+review.toString());
-//			System.out.println("++++="+review);
-//			model.addAttribute("mealId", mService.getMealbyID(review));
-			
+			model.addAttribute("mealId", mService.getMealbyDBID(review.getReviewedMeal().getId()));
 			return "/meal/review.jsp";
 		}
 		Long userR = (Long)session.getAttribute("userId");
 		
 		model.addAttribute("writeReview", rService.createReview(review));
 		return "redirect:/profile/" + userR;
-//		return "redirect:/";
 	}
 	
 	@DeleteMapping("/delete/{id}/review")

@@ -70,6 +70,12 @@ public class MealService {
 
 		return dbMeal;
 	}
+	
+	public Meal getMealbyDBID(Long id) {
+		//
+		Meal dbMeal = mealRepository.findById(id).get();
+		return dbMeal;
+	}
 
 	// Country API
 
