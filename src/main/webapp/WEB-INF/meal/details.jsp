@@ -41,10 +41,9 @@
 
 
 		<div class="row text-center">
-			<h3>Feeling hungry?</h3>
+			<h3>Hungry yet?</h3>
 
-			<a href="/details"><button class="randommeal" id="meal">Get a
-					random meal</button></a>
+			<a href="/details"><button class="randommeal" id="meal">Try a different meal!</button></a>
 
 		</div>
 
@@ -54,7 +53,7 @@
 		
 
 		
-		Drink Alternate: ${meal.strDrinkAlternate} <br/>
+		
 		Category: ${meal.strCategory} <br/>
 		Area: ${meal.strArea} <br/>
 	 	Instructions: ${meal.strInstructions} <br/>
