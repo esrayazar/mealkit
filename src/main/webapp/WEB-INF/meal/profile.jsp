@@ -117,8 +117,10 @@
 					</div>
 					<div class="card-footer">
 						<c:if test="${review.reviewedBy.id eq user.id}">
-						(<a href="/books/addreview?book_id=${book.id}">Edit</a>)
-				(<a href="/books/${book.id}/review/${review.id}/delete/bookprofile">Delete</a>)
+						(<a href="/edit/${review.id}/review">Edit</a>)
+				<form action="/delete/${review.id}/review" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
 			</c:if>
 					</div>
 
