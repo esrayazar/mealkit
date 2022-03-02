@@ -70,25 +70,27 @@ public class ReviewController {
 
 	@GetMapping("/edit/{id}/review")
 	public String editReview( @ModelAttribute("Edit") Review review, @PathVariable("id") Long id, Model model) {
-		model.addAttribute("pUser", uService.findById(id));
-		return "/meal/edit.jsp";
+		Review rev = rService.getOneR(id);
+		//model.addAttribute("pUser", uService.findById(rev.getReviewedBy().getId()));
+		model.addAttribute("review", rev);
+		return "/meal/reviewedit.jsp";
 	}
 	
-//	@PutMapping("/update/{id}/review")
-//	public String update(@Valid @ModelAttribute("Edit") User user, BindingResult results, @PathVariable("id") Long id,
-//			Model model, HttpSession session) {
-////		if (session.getAttribute("userId") == null)
-////			return "redirect:login/";
-//		if (results.hasErrors()) {
-//			model.addAttribute("EditOne", uService.findById(id));
-//			return "/meal/edit.jsp";
-////			return "redirect:/profile/{id}/edit";
-////			
-//		} else {
-//			System.out.println("hello");
-//			model.addAttribute("update", uService.updateU(user));
-//
-//			return "redirect:/details";
-//		}
-//	}
+	@PostMapping("/update/{id}/review")
+	public String update(@Valid @ModelAttribute("Edit") Review review, BindingResult results, @PathVariable("id") Long id,
+			Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null)
+			return "redirect:login/";
+		if (results.hasErrors()) {
+			Review rev = rService.getOneR(id);
+			model.addAttribute("EditOne", rev);
+			return "/meal/reviewedit.jsp";
+		} else {
+			Review rev = rService.getOneR(id);
+			rev.setReview(review.getReview());
+			rService.updateR(rev);
+			//model.addAttribute("update", );
+			return "redirect:/profile/"+rev.getReviewedBy().getId();
+		}
+	}
 }
