@@ -4,6 +4,8 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,13 +14,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
-import com.coding.meal_kit.models.Rating;
+import com.coding.meal_kit.models.Areas;
 import com.coding.meal_kit.models.Review;
 import com.coding.meal_kit.models.User;
 import com.coding.meal_kit.services.MealService;
-import com.coding.meal_kit.services.RatingService;
 import com.coding.meal_kit.services.ReviewService;
 import com.coding.meal_kit.services.UserService;
 
@@ -29,13 +29,19 @@ public class ReviewController {
 	private ReviewService rService;
 	
 	@Autowired
-	private RatingService ratingService;
-	
-	@Autowired
 	private MealService mService;
 	
 	@Autowired
 	private UserService uService;
+	
+	private Areas areas;
+
+	@EventListener(ApplicationReadyEvent.class)
+	public void loadData() {
+		// do something
+		areas = mService.getCountryList();
+		System.out.println("Loaded country list size=" + areas.getAreas().size()+" in ReviewController");
+	}
 
 	@GetMapping("/addReview/{id}")
 	public String reviews(@PathVariable("id") Long id, @ModelAttribute("PostAReview") Review review, Model model) {
@@ -67,9 +73,11 @@ public class ReviewController {
 	
 
 	@GetMapping("/edit/{id}/review")
-	public String editReview( @ModelAttribute("Edit") Review review, @PathVariable("id") Long id, Model model) {
+	public String editReview(HttpSession session, @ModelAttribute("Edit") Review review, @PathVariable("id") Long id, Model model) {
 		Review rev = rService.getOneR(id);
-		//model.addAttribute("pUser", uService.findById(rev.getReviewedBy().getId()));
+		User user = this.uService.findById((Long) session.getAttribute("userId"));
+		model.addAttribute("user", user);
+		model.addAttribute("apiAreas", areas);
 		model.addAttribute("review", rev);
 		return "/meal/reviewedit.jsp";
 	}

@@ -97,8 +97,8 @@
 		</div>
 	</nav>
 
-<div class="wrapper"></div>
-<h1>My Review:</h1>
+<div class="wrapper">
+<h3>My Review for ${review.reviewedMeal.strMeal}:</h3>
 	<form:form action="/update/${review.id}/review" method="post" modelAttribute="Edit">
 		<form:input path="reviewedBy" type="hidden" value="${review.reviewedBy.id}"/>
 		<form:input path="reviewedMeal" type="hidden" value="${review.reviewedMeal.id}"/>

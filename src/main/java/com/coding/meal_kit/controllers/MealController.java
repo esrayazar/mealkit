@@ -38,6 +38,11 @@ public class MealController {
 	private ReviewService rService;
 
 	private Areas areas;
+	
+	public Areas getAreas()
+	{
+		return areas;
+	}
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void loadData() {
@@ -167,7 +172,7 @@ public class MealController {
 			return "redirect:/details";
 		}
 	}
-	//showallreviews
+	//show all reviews
 	@GetMapping("/showreviews/{id}")
 	public String showReviews(@PathVariable("id") Long id, Model model, HttpSession session) {
 		if (session.getAttribute("userId") == null)
