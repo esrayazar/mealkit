@@ -39,8 +39,6 @@ public class ReviewController {
 
 	@GetMapping("/addReview/{id}")
 	public String reviews(@PathVariable("id") Long id, @ModelAttribute("PostAReview") Review review, Model model) {
-//		model.addAttribute("createR", rService.getAll());
-		
 		model.addAttribute("mealId", mService.getMealbyID(id));
 		return "/meal/review.jsp";
 	}
@@ -60,11 +58,11 @@ public class ReviewController {
 	
 	@DeleteMapping("/delete/{id}/review")
 	public String deleteReview(@PathVariable("id") Long id, HttpSession session, Model  model) {
-//		if (session.getAttribute("userId") == null)
-//			return "redirect:";
-		
+		if (session.getAttribute("userId") == null)
+			return "redirect:";
+		User user = this.uService.findById((Long) session.getAttribute("userId"));
 		rService.deleteReview(id);
-		return "redirect:/profile/{id}";
+		return "redirect:/profile/" + user.getId();
 	}	
 	
 
@@ -93,4 +91,5 @@ public class ReviewController {
 			return "redirect:/profile/"+rev.getReviewedBy().getId();
 		}
 	}
+
 }

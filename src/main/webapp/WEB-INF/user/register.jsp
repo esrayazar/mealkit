@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>Registration</title>
 <link href="/css/style.css" rel="stylesheet" type="text/css">
-
+<script src="/js/flip.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -44,7 +44,7 @@
 						
 					</form:form>
 
-					<input class="btn" type="submit" value="I have an account!"
+					<input class="btn" type="button" value="I have an account!"
 						onclick="openRegister()" />
 							<h3>Sign in with social media</h3>
 	<a href="">Facebook</a>
@@ -65,7 +65,7 @@
 						<p>
 							<label>Password:</label> <input name="password" type="password" />
 						</p>
-						<button class="btn-signin" type="button">Sign in</button>
+						<button class="btn-signin" type="submit">Sign in</button>
 					</form>
 					<button class="btn" onclick="openLogin()">I am new here</button>
 
@@ -74,7 +74,7 @@
 		</div>
 	</div>
 
-	<script src="/js/flip.js"></script>
+	
 
 
 

@@ -40,7 +40,7 @@
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete">
 </form>
-                (<a href="">Delete</a>)<br>
+               <!--  (<a href="">Delete</a>)<br> -->
 </c:if>
 
 </c:forEach>
