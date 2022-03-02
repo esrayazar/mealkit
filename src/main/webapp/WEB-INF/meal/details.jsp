@@ -160,38 +160,38 @@
 			<div class="col">
 				<h3>Ingredients:</h3>
 				<ul>
-				<c:if test="${not empty meal.strMeasure1}">
-				<li>${meal.strMeasure1} ${meal.strIngredient1.trim()}</li>
+				<c:if test="${not empty meal.strMeasure1.trim()}">
+				<li>${meal.strMeasure1} ${meal.strIngredient1}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure2}">
-				<li>${meal.strMeasure2} ${meal.strIngredient2.trim()}</li>
+				<c:if test="${not empty meal.strMeasure2.trim()}">
+				<li>${meal.strMeasure2} ${meal.strIngredient2}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure3}">
-				<li>${meal.strMeasure3} ${meal.strIngredient3.trim()}</li>
+				<c:if test="${not empty meal.strMeasure3.trim()}">
+				<li>${meal.strMeasure3} ${meal.strIngredient3}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure4}">
-				<li>${meal.strMeasure4} ${meal.strIngredient4.trim()}</li>
+				<c:if test="${not empty meal.strMeasure4.trim()}">
+				<li>${meal.strMeasure4} ${meal.strIngredient4}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure5}">
-				<li>${meal.strMeasure5} ${meal.strIngredient5.trim()}</li>
+				<c:if test="${not empty meal.strMeasure5.trim()}">
+				<li>${meal.strMeasure5} ${meal.strIngredient5}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure6}">
-				<li>${meal.strMeasure6} ${meal.strIngredient6.trim()}</li>
+				<c:if test="${not empty meal.strMeasure6.trim()}">
+				<li>${meal.strMeasure6} ${meal.strIngredient6}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure7}">
-				<li>${meal.strMeasure7} ${meal.strIngredient7.trim()}</li>
+				<c:if test="${not empty meal.strMeasure7.trim()}">
+				<li>${meal.strMeasure7} ${meal.strIngredient7}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure8}">
-				<li>${meal.strMeasure8} ${meal.strIngredient8.trim()}</li>
+				<c:if test="${not empty meal.strMeasure8.trim()}">
+				<li>${meal.strMeasure8} ${meal.strIngredient8}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure9}">
-				<li>${meal.strMeasure9} ${meal.strIngredient9.trim()}</li>
+				<c:if test="${not empty meal.strMeasure9.trim()}">
+				<li>${meal.strMeasure9} ${meal.strIngredient9}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure10}">
-				<li>${meal.strMeasure10} ${meal.strIngredient10.trim()}</li>
+				<c:if test="${not empty meal.strMeasure10.trim()}">
+				<li>${meal.strMeasure10} ${meal.strIngredient10}</li>
 				</c:if>
-				<c:if test="${not empty meal.strMeasure11}">
-				<li>${meal.strMeasure11} ${meal.strIngredient11.trim()}</li>
+				<c:if test="${not empty meal.strMeasure11.trim()}">
+				<li>${meal.strMeasure11} ${meal.strIngredient11}</li>
 				</c:if>
 				<c:if test="${not empty meal.strMeasure12.trim()}">
 				<li>${meal.strMeasure12} ${meal.strIngredient12}</li>
