@@ -2,7 +2,7 @@
 
 h3{
 	color:#2c6a3e;
-	padding-left: 452px;
+	margin-left: 370px;
 	font-size: 50px;
 	font-style: italic;
 	display: flex;
@@ -11,8 +11,8 @@ h3{
 
 .randommeal { background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%)}
 .randommeal {
-			margin-top: 25px;
-            margin-left: 490px;
+			margin-top: 35px;
+            margin-left: 420px;
             padding: 15px 40px;
             text-align: center;
             text-transform: uppercase;
