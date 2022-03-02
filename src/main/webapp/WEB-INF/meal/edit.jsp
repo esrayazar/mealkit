@@ -14,21 +14,8 @@
 <title>Edit</title>
 </head>
 <body>
-		<form:form action="/update/${EditOne.id}" method="post" modelAttribute="Edit">
-		<input type="hidden" name="_method" value="put"/>
-		<p>
-			<form:label path="firstName">Name:</form:label>
-			<form:errors path="firstName" class="text-danger"/>
-			<form:input path="firstName" value="${EditOne.firstName}"/>
-		</p>
-		<p>
-			<form:label path="email">Email:</form:label>
-			<form:errors path="email" class="text-danger"/>
-			<form:input path="email" value="${EditOne.email}"/>
-		</p>
-		
-			<input class="btn" type="submit" value="Submit" />
-	</form:form>
-	
+		<h1>User's profile</h1>
+		<p>Name: ${EditOne.firstName}</p>
+		<p>email: ${EditOne.email}</p>
 </body>
 </html>
