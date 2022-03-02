@@ -104,6 +104,9 @@
 			<h1>User Profile</h1>
 			<h2>Name: ${user.firstName}</h2>
 			<h2>Email: ${user.email}</h2>
+			<h2>My Reviews: <a href="/showreviews/${user.id}">${user.reviews.size()}</a></h2>
+			<h2>My Favorite Foods: ${user.favoritedMeals.size()}</h2>
+			<h2>My Likes: ${user.likedMeals.size()}</h2>
 
 		</div>
 		<div class="col-sm-4">

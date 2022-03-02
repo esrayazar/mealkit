@@ -102,6 +102,9 @@ public class MealController {
 		if (session.getAttribute("userId") == null)
 			return "redirect:login/";
 		model.addAttribute("apiAreas", this.areas);
+		User user = this.uService.findById((Long) session.getAttribute("userId"));
+		model.addAttribute("user", user);
+		
 		if (by.equals("name")) {
 			Meals meal = mealService.getMealbyName(term);
 			if (meal.getMeals() == null) {
