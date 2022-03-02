@@ -128,7 +128,8 @@ public class MealController {
 	public String profile(@PathVariable("id") Long id, Model model, HttpSession session) {
 		if (session.getAttribute("userId") == null)
 			return "redirect:/login";
-		model.addAttribute("pUser", uService.findById(id));
+		model.addAttribute("user", uService.findById(id));
+		model.addAttribute("apiAreas", this.areas);
 //		model.addAttribute("showR", rService.getOneR(id) );
 		return "/meal/profile.jsp";
 
@@ -139,7 +140,7 @@ public class MealController {
 			HttpSession session) {
 		if (session.getAttribute("userId") == null)
 			return "redirect:/login";
-
+		model.addAttribute("apiAreas", this.areas);
 		model.addAttribute("EditOne", uService.findById(id));
 
 		return "/meal/edit.jsp";
