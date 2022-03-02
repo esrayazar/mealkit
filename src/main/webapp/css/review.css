@@ -2,6 +2,7 @@ body {
 	background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%);
 	margin-left: 185px;
 	margin-right: 185px; 
+	line-height: 25px;
 	
 }
 
@@ -29,4 +30,20 @@ img {
 	margin-left:135px;
 	font-size: 25px; 
 	font-style: italic; 
+}
+	
+#reviewArea {
+	margin-left: 140px;
+	width: 350px; 
+	height: 60px;
+}
+
+h1 {
+	font-style: italic; 
+	margin-left:270px;
+}
+
+#postButton {
+	margin-left: 275px;
+	margin-bottom: 40px;
 }
