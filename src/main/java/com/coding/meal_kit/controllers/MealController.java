@@ -38,11 +38,6 @@ public class MealController {
 	private ReviewService rService;
 
 	private Areas areas;
-	
-	public Areas getAreas()
-	{
-		return areas;
-	}
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void loadData() {
