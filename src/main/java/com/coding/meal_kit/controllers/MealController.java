@@ -101,7 +101,10 @@ public class MealController {
 			HttpSession session) {
 		if (session.getAttribute("userId") == null)
 			return "redirect:login/";
-
+		model.addAttribute("apiAreas", this.areas);
+		User user = this.uService.findById((Long) session.getAttribute("userId"));
+		model.addAttribute("user", user);
+		
 		if (by.equals("name")) {
 			Meals meal = mealService.getMealbyName(term);
 			if (meal.getMeals() == null) {
@@ -128,9 +131,9 @@ public class MealController {
 	public String profile(@PathVariable("id") Long id, Model model, HttpSession session) {
 		if (session.getAttribute("userId") == null)
 			return "redirect:/login";
-		model.addAttribute("user", uService.findById(id));
+		User user = this.uService.findById((Long) session.getAttribute("userId"));
 		model.addAttribute("apiAreas", this.areas);
-//		model.addAttribute("showR", rService.getOneR(id) );
+		model.addAttribute("user", user);
 		return "/meal/profile.jsp";
 
 	}
@@ -163,6 +166,17 @@ public class MealController {
 
 			return "redirect:/details";
 		}
+	}
+	//show all reviews
+	@GetMapping("/showreviews/{id}")
+	public String showReviews(@PathVariable("id") Long id, Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null)
+			return "redirect:/login";
+		model.addAttribute("user", uService.findById(id));
+		model.addAttribute("apiAreas", this.areas);
+//		model.addAttribute("showR", rService.getOneR(id) );
+		return "/meal/showreviews.jsp";
+
 	}
 
 	@DeleteMapping("/delete/{id}")

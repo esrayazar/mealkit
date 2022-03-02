@@ -89,12 +89,17 @@ public class MealService {
 
 	public Meals getMealbyName(String name) {
 		System.out.println(byName + name);
-		Meals meal = restTemplate.getForObject(byName + name, Meals.class);
-		String videoID = meal.getMeals().get(0).getStrYoutube();
-		int pos = videoID.indexOf("=");
-		videoID = videoID.substring(pos + 1);
-		meal.getMeals().get(0).setStrYoutubeVideoID(videoID);
-		return meal;
+		Meals meals = restTemplate.getForObject(byName + name, Meals.class);
+		if(meals.getMeals() != null)
+		for(Meal meal:meals.getMeals())
+		{
+			String videoID = meal.getStrYoutube();
+			int pos = videoID.indexOf("=");
+			videoID = videoID.substring(pos + 1);
+			meal.setStrYoutubeVideoID(videoID);			
+		}
+
+		return meals;
 	}
 
 	// Search By Ingredients
