@@ -40,6 +40,7 @@ h3{
 
 body {
 	background-image: url(/images/background-image1.png);
+	background-size: cover;
 }
 
 .search {
