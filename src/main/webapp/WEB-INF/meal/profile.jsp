@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/css/profile.css" rel="stylesheet" type="text/css">
+
 <title>Profile</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -24,6 +24,7 @@
 <script src="/js/home.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="/css/profile.css" rel="stylesheet" type="text/css">
 </head>
 
 
@@ -31,111 +32,100 @@
 	<script>
 		AOS.init();
 	</script>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-	<div class="container-fluid justify-content-end">
-		<c:choose>
-			<c:when test="${not empty user}">
-				<a class="navbar-brand" href="/profile/${user.id}">MyMealKit</a>
-			</c:when>
-			<c:otherwise>
-				<a class="navbar-brand" href="/">MyMealKit</a>
-			</c:otherwise>
-		</c:choose>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid justify-content-end">
+			<c:choose>
+				<c:when test="${not empty user}">
+					<a class="navbar-brand" href="/profile/${user.id}">MyMealKit</a>
+				</c:when>
+				<c:otherwise>
+					<a class="navbar-brand" href="/">MyMealKit</a>
+				</c:otherwise>
+			</c:choose>
 
 
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-			data-bs-target="#navbarBasic" aria-controls="navbarBasic"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse show" id="navbarBasic">
-			<ul class="navbar-nav me-auto mb-2 mb-xl-0">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="/">Home</a></li>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarBasic"
+				aria-controls="navbarBasic" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse show" id="navbarBasic">
+				<ul class="navbar-nav me-auto mb-2 mb-xl-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/">Home</a></li>
 
-				<li class="nav-item form-control">
-					<form action="/searchByCountry" method="get">
-						<select name="country">
-							<c:forEach items="${apiAreas.areas}" var="area">
-								<option value="${area.strArea}">${area.strArea}</option>
-							</c:forEach>
+					<li class="nav-item form-control">
+						<form action="/searchByCountry" method="get">
+							<select name="country">
+								<c:forEach items="${apiAreas.areas}" var="area">
+									<option value="${area.strArea}">${area.strArea}</option>
+								</c:forEach>
 
-						</select>
-						<button class="btn" type="submit">Get Meal List</button>
-					</form>
+							</select>
+							<button class="btn" type="submit">Get Meal List</button>
+						</form>
 
-				</li>
-			</ul>
-		</div>
-		<div class="collapse navbar-collapse show">
-			<form action="/search" method="get">
-				<input name="term"> <select name="by">
-					<option value="name">by food name</option>
-					<option value="ing">by ingredients</option>
-				</select>
-				<button class="search" type="submit">Search</button>
-			</form>
-		</div>
-		<div class="collapse navbar-collapse show" id="navbarBasic2">
-			<ul class="navbar-nav me-auto mb-2 mb-xl-0">
-
-				<c:if test="${empty user}">
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="/register">Sign up</a></li>
-					<li class="nav-item"><a
-						class="nav-link .text-decoration-underline" href="/login">Sign
-							in</a></li>
-				</c:if>
-				<c:if test="${not empty user}">
-					<li class="nav-item"><a class="nav-link "
-						href="/profile/${user.id}">(${user.firstName})</a>
-					<li class="nav-item"><a class="nav-link " href="/logout">Logout</a>
 					</li>
-				</c:if>
+				</ul>
+			</div>
+			<div class="collapse navbar-collapse show">
+				<form action="/search" method="get">
+					<input name="term"> <select name="by">
+						<option value="name">by food name</option>
+						<option value="ing">by ingredients</option>
+					</select>
+					<button class="search" type="submit">Search</button>
+				</form>
+			</div>
+			<div class="collapse navbar-collapse show" id="navbarBasic2">
+				<ul class="navbar-nav me-auto mb-2 mb-xl-0">
 
-			</ul>
+					<c:if test="${empty user}">
+						<li class="nav-item"><a class="nav-link" aria-current="page"
+							href="/register">Sign up</a></li>
+						<li class="nav-item"><a
+							class="nav-link .text-decoration-underline" href="/login">Sign
+								in</a></li>
+					</c:if>
+					<c:if test="${not empty user}">
+						<li class="nav-item"><a class="nav-link "
+							href="/profile/${user.id}">(${user.firstName})</a>
+						<li class="nav-item"><a class="nav-link " href="/logout">Logout</a>
+						</li>
+					</c:if>
+
+				</ul>
+			</div>
 		</div>
-	</div>
-</nav>
-<div class="container d-flex" style="padding-top: 10%;">
-<div class="col-sm-4">
-		<h1>User Profile</h1>
-		<h2>Name: ${user.firstName}</h2>
-		<h2>Email: ${user.email}</h2>
-		
-</div>
-<div class="col-sm-6">
-<div class="d-flex flex-column">
-<h1>${user.firstName}'s reviews:</h1>
-			<c:forEach items="${user.reviews}" var="review">
+	</nav>
+	<div class="container d-flex" style="padding-top: 10%;">
+		<div class="col-sm-4">
+			<h1>User Profile</h1>
+			<h2>Name: ${user.firstName}</h2>
+			<h2>Email: ${user.email}</h2>
 
-				<div class="card p-2" data-aos="flip-right"
-					style="background-color: #fff">
-					<div class="card-body">
-						<p>${review.review.trim()}</p>
-
-					</div>
-					<div class="card-footer">
-						<c:if test="${review.reviewedBy.id eq user.id}">
-						(<a href="/edit/${review.id}/review">Edit</a>)
-				<form action="/delete/${review.id}/review" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
-			</c:if>
-					</div>
-
-
-				</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="d-flex flex-column">
+				<h1>${user.firstName}'s favorites:</h1>
 				<hr>
-			</c:forEach>
+				<c:forEach items="${user.favoritedMeals}" var="meal">
+					<div class="row">
+					<h4><a href="/getMeal/${meal.idMeal}">${meal.strMeal}</a></h4>
+						<img src="${meal.strMealThumb}" width=256 height=256>
+					</div>
+
+					<hr>
+				</c:forEach>
+			</div>
+
 		</div>
 
-</div>
+	</div>
 
-</div>
 
-	
-	
+
 
 </body>
 </html>

@@ -128,5 +128,18 @@ public class User {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
+	public List<Meal> getLikedMeals() {
+		return likedMeals;
+	}
+	public void setLikedMeals(List<Meal> likedMeals) {
+		this.likedMeals = likedMeals;
+	}
+	public List<Meal> getFavoritedMeals() {
+		return favoritedMeals;
+	}
+	public void setFavoritedMeals(List<Meal> favoritedMeals) {
+		this.favoritedMeals = favoritedMeals;
+	}
+	
 
 }
