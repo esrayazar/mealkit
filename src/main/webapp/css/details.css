@@ -1,0 +1,67 @@
+body {
+	background-image: url(/images/detailsbackground.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-left: 180px;
+	margin-right: 160px;
+	line-height: 23px;
+	
+	
+	
+	color: black;
+	
+
+}
+
+
+.bottomrow {
+	margin-bottom:5px;
+	margin-left: 150px;
+	
+	
+}
+
+
+
+.list {
+	float: right;
+	
+}
+
+.symbol {
+	margin-right:35px;
+	float: left;
+	
+	
+}
+
+.randommeal { background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%)}
+.randommeal {
+			margin-top: 25px;
+            margin-left: 2px;
+            padding: 15px 40px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+	
+	
+}
+          .randommeal:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+          
+h3 {
+	font-style: italic;
+}
+
+a {
+	color: black;
+	
+}
