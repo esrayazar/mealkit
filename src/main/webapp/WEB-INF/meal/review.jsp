@@ -15,21 +15,22 @@
 <body>
 
 
-<div>
-	Meal: <c:out value="${mealId.strMeal}"></c:out><br>
-	Ingredients: <c:out value="${mealId.strIngredient1}"></c:out><br/>
-	Category: <c:out value="${mealId.strCategory}"></c:out><br>
-	Nationality food: <c:out value="${mealId.strArea}"></c:out><br>
+<div class="top">
+	<div class="mealname">
+	<c:out value="${mealId.strMeal}"></c:out><br>
+	</div>
 	<%-- Instructions: <c:out value="${mealId.strInstructions}"></c:out><br> --%>
 	<img src="${mealId.strMealThumb}" height="128" width="128"> <br>
-	Tags: <c:out value="${mealId.strTags}"></c:out><br>
 	<iframe width="420" height="315"
 		src="https://www.youtube.com/embed/${mealId.strYoutubeVideoID}">
 	</iframe>
 	<a href="${mealId.strYoutube}" target="_blank">Watch on YouTube</a><br/>
+	
+	Nationality: <c:out value="${mealId.strArea}"></c:out><br>
 	Ingredients: ${mealId.strIngredient1}, ${mealId.strIngredient2}, ${mealId.strIngredient3}, ${mealId.strIngredient4}<br>
+	Instructions: <c:out value="${mealId.strInstructions}"></c:out><br>
 	Reference: <c:out value="${mealId.strSource}"></c:out><br>
-</div>
+
 
 
 <h1>Review</h1>
@@ -41,6 +42,7 @@
 		<form:textarea path="review"/>
 		<input type="submit" value="Post review"/>
 	</form:form>
+	</div>
 	
 </body>
 </html>

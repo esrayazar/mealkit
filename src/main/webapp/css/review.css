@@ -1,0 +1,32 @@
+body {
+	background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%);
+	margin-left: 185px;
+	margin-right: 185px; 
+	
+}
+
+.top {
+	float: left;
+	margin-left:100px;
+}
+
+.bottom {
+	float: right;
+	margin-right: 195px;
+	margin-bottom: 20px;
+	
+}
+
+img {
+	float: right; 
+	margin-right: 40px;
+	height: 315px;
+	width: 315px;
+	margin-top:20px;
+}
+
+.mealname {
+	margin-left:135px;
+	font-size: 25px; 
+	font-style: italic; 
+}
