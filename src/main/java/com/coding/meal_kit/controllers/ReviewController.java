@@ -62,7 +62,7 @@ public class ReviewController {
 	public String deleteReview(@PathVariable("id") Long id, HttpSession session, Model  model) {
 //		if (session.getAttribute("userId") == null)
 //			return "redirect:";
-		
+		User user = this.uService.findById((Long) session.getAttribute("userId"));
 		rService.deleteReview(id);
 		Long userR = (Long)session.getAttribute("userId");
 		
@@ -95,4 +95,5 @@ public class ReviewController {
 			return "redirect:/profile/"+rev.getReviewedBy().getId();
 		}
 	}
+
 }
