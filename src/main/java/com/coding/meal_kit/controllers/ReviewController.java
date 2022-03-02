@@ -64,7 +64,9 @@ public class ReviewController {
 //			return "redirect:";
 		
 		rService.deleteReview(id);
-		return "redirect:/profile/{id}";
+		Long userR = (Long)session.getAttribute("userId");
+		
+		return "redirect:/profile/" + userR;
 	}	
 	
 
