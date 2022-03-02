@@ -26,10 +26,10 @@
 	</iframe>
 	<a href="${mealId.strYoutube}" target="_blank">Watch on YouTube</a><br/>
 	
-	Nationality: <c:out value="${mealId.strArea}"></c:out><br>
-	Ingredients: ${mealId.strIngredient1}, ${mealId.strIngredient2}, ${mealId.strIngredient3}, ${mealId.strIngredient4}<br>
-	Instructions: <c:out value="${mealId.strInstructions}"></c:out><br>
-	Reference: <c:out value="${mealId.strSource}"></c:out><br>
+	<p>Nationality: <c:out value="${mealId.strArea}"></c:out></p>
+	<p>Ingredients: ${mealId.strIngredient1}, ${mealId.strIngredient2}, ${mealId.strIngredient3}, ${mealId.strIngredient4}</p>
+	<p>Instructions: <c:out value="${mealId.strInstructions}"></c:out></p>
+	<p>Reference: <c:out value="${mealId.strSource}"></c:out></p>
 
 
 
@@ -39,8 +39,8 @@
 		<form:input path="reviewedMeal" type="hidden" value="${mealId.id}"/>
 		<form:label path="review"></form:label>
 		<form:errors path="review"/>
-		<form:textarea path="review"/>
-		<input type="submit" value="Post review"/>
+		<form:textarea id="reviewArea" path="review"/><br>
+		<input id="postButton" type="submit" value="Post review"/>
 	</form:form>
 	</div>
 	
