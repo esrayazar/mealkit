@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <link href="/css/style.css" rel="stylesheet" type="text/css">
 <title>Log in</title>
+<script src="/js/flip.js"></script>
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 						<p>
 							<input name="password" class="input-box" type="password" placeholder="Enter your password" />
 						</p>
-						<button class="btn">Submit</button>
+						<button class="btn" type="submit">Submit</button>
 					</form>
 					<button class="btn" onclick="backToRegister()">flip it to register</button>
 					<h3>Sign in with social media</h3>
@@ -63,8 +64,8 @@
 						</p>
 						<input class="btn" type="submit" value="Submit" />
 					</form:form>
-						<input class="btn" type="submit" value="I have an account"
-						onclick="openRegister()" />
+						<input class="btn" type="button" value="I have an account"
+						onclick="openLogin()" />
 						<h3>Sign in with social media</h3>
 	<a href="">Facebook</a>
 	<a href="">Instagram</a>
@@ -78,7 +79,7 @@
 
 	
 	
-	<script src="/js/flip.js"></script>
+	
 	
 	
 	
