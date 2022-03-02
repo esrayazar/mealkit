@@ -47,8 +47,14 @@ public class MealController {
 	}
 
 	@GetMapping("/")
-	public String home(Model model) {
-		// userId
+	public String home(Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null)
+			model.addAttribute("noactive", true);
+		else {
+			User user = this.uService.findById((Long) session.getAttribute("userId"));
+			model.addAttribute("user", user);
+		}
+		
 		model.addAttribute("apiAreas", this.areas);
 		return "/meal/home.jsp";
 	}
@@ -121,7 +127,7 @@ public class MealController {
 	@GetMapping("/profile/{id}")
 	public String profile(@PathVariable("id") Long id, Model model, HttpSession session) {
 		if (session.getAttribute("userId") == null)
-			return "redirect:login/";
+			return "redirect:/login";
 		model.addAttribute("pUser", uService.findById(id));
 //		model.addAttribute("showR", rService.getOneR(id) );
 		return "/meal/profile.jsp";
@@ -132,7 +138,7 @@ public class MealController {
 	public String edit(@ModelAttribute("Edit") User user, @PathVariable("id") Long id, Model model,
 			HttpSession session) {
 		if (session.getAttribute("userId") == null)
-			return "redirect:login/";
+			return "redirect:/login";
 
 		model.addAttribute("EditOne", uService.findById(id));
 
