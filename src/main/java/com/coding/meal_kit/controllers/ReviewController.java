@@ -44,8 +44,11 @@ public class ReviewController {
 	}
 
 	@GetMapping("/addReview/{id}")
-	public String reviews(@PathVariable("id") Long id, @ModelAttribute("PostAReview") Review review, Model model) {
+	public String reviews(HttpSession session, @PathVariable("id") Long id, @ModelAttribute("PostAReview") Review review, Model model) {
 		model.addAttribute("mealId", mService.getMealbyID(id));
+		User user = this.uService.findById((Long) session.getAttribute("userId"));
+		model.addAttribute("user", user);
+		model.addAttribute("apiAreas", areas);
 		return "/meal/review.jsp";
 	}
 
