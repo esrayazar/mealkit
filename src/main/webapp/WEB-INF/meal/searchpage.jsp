@@ -103,7 +103,8 @@
 <c:forEach items="${apiData.meals}" var="meal">
 <h1>${meal.strMeal}</h1>
 		<img src="${meal.strMealThumb}">
-		<a id="meallink" href="/getMeal/${meal.idMeal}">Check this meal out!</a>
+		<p class="text-center"><a id="meallink" href="/getMeal/${meal.idMeal}">Check this meal out!</a></p>
+		<hr>
 </c:forEach>
 		
 		
