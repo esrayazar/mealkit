@@ -13,24 +13,14 @@
 </head>
 <a href="/">Home</a>
 
- <a href="/profile/${pUser.id}/edit">Edit</a>  
- <%-- <form action="/profile/${pUser.id}/edit" method="post">
-    <input type="hidden" name="_method" value="put">
-    <input type="submit" value="edit">
-</form>  --%>
-
-<form action="/delete/${pUser.id}" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
-</form>
-
 <body>
-	<h1>User's profile</h1>
+<div class="profile">
+	<h1>User Profile</h1>
 	<h2>Name: ${pUser.firstName}</h2>
 	<h2>Email: ${pUser.email}</h2>
 
 
-<h1>User's reviews</h1>
+<h1>${pUser.firstName}'s reviews:</h1>
 <c:forEach items="${pUser.reviews}" var="review">
 <c:out value="${review.review}"></c:out>
 <c:if test="${review.reviewedBy.id eq pUser.id}">
@@ -44,6 +34,6 @@
 </c:if>
 
 </c:forEach>
-	
+</div>	
 </body>
 </html>

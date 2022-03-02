@@ -37,7 +37,7 @@ src="https://www.youtube.com/embed/${meal.strYoutubeVideoID}">
 <c:otherwise>
 <c:forEach items="${apiMeals.meals}" var="meal">
 <h1>${meal.strMeal}</h1>
-		<img src="${meal.strMealThumb}">
+		<img src="${meal.strMealThumb}"><br>
 		<a class="seeMeal" href="/getMeal/${meal.idMeal}">See Meal</a>
 </c:forEach>
 </c:otherwise>
