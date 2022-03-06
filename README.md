@@ -1,6 +1,17 @@
 # mealkit
 This project is for managing meal kits. We used TheMealDB API to get a meal, get meal list based on country, search meal based on food name and food inggredients. Please see the API documentation on https://www.themealdb.com
 
+MealKit application has following functionalites
+
+1. Landing Page
+2. User registration page and its validation.
+3. User login page and its validation.
+4. Registration and Login page has flip animation between them.
+5. User Profile: Display user info and user stats. User's favorite foods are also listed.
+6. Meal Reviews: User can review a meal, edit and delete the review.
+7. Display a meal with how to prepare information. User can like, add favorite and write review about the meal. Unlike and remove from favorite is also possible. An embedded youtube from API shows the live action about preparing the meal.
+8. Meal search based on food name and ingredient is also available.  
+
 ### Landing Page
 <img width="1440" alt="landingpage" src="https://user-images.githubusercontent.com/89671926/156934321-7e645b40-c84c-41c0-99f7-b392a4d0da47.png">
 
