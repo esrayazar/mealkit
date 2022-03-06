@@ -1,7 +1,10 @@
 # mealkit
 This project is for managing meal kits. We used TheMealDB API to get a meal, get meal list based on country, search meal based on food name and food inggredients. Please see the API documentation on https://www.themealdb.com
 
-MealKit application has following functionalites
+### API usage considerations
+We implemented a neat logic fetching data from the API. We only fetch once a meal from the API and store the information on our DB and reuse the meal information from our DB. With this logic we respect the API owners to not exhaust their resources. Morevoer, If the API becomes unavailable in the future, we guarantee that existing data will be available in our DB.
+
+MealKit application has following functionalites:
 
 1. Landing Page
 2. User registration page and its validation.
