@@ -1,5 +1,5 @@
 # mealkit
-This project is for managing meal kits
+This project is for managing meal kits. We used TheMealDB API to get a meal, get meal list based on country, search meal based on food name and food inggredients. Please see the API documentation on https://www.themealdb.com
 
 ### Landing Page
 <img width="1440" alt="landingpage" src="https://user-images.githubusercontent.com/89671926/156934321-7e645b40-c84c-41c0-99f7-b392a4d0da47.png">
